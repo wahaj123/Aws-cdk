@@ -1,0 +1,23 @@
+{
+  "app": "python3 app.py",
+  "context": {
+    "@aws-cdk/core:enableStackNameDuplicates": "true",
+    "aws-cdk:enableDiffNoFail": "true",
+    "@aws-cdk/core:stackRelativeExports": "true",
+    "@aws-cdk/aws-ecr-assets:dockerIgnoreSupport": true,
+  
+  "Nlb":{
+    "internet_facing": true,
+    "load_balancer_name": "nlb",
+    "id": "Nlb",
+    "listener_port": 80,
+    "targetgroup_port":80
+  },
+  "VPC":{
+    "vpc_cidr": "10.10.0.0/16",
+    "cidr_mask": 24,
+    "nat_gateways": 2
+    }
+  }
+
+}
